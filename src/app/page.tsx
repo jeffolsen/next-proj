@@ -1,4 +1,5 @@
 import FeedCollectionCode from "@/components/debug/FeedCollectionCode";
+import ItemCollectionCode from "@/components/debug/ItemCollectionCode";
 import Image from "next/image";
 
 export default function Home() {
@@ -64,6 +65,7 @@ export default function Home() {
             Documentation
           </a>
         </div>
+        <ItemCollectionCode />
         <FeedCollectionCode />
       </main>
     </div>
