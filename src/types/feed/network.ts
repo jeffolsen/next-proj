@@ -1,13 +1,18 @@
-import { FeedCollectionType, FeedSubjectType, FeedType } from "./model";
+import { TagNameType } from "@/types/tag/model";
+import {
+  FeedCollectionType,
+  FeedSubjectType,
+  FeedType,
+} from "@/types/feed/model";
 
-export type FeedInclude = "tags" | "components" | "links";
+export type FeedIncludes = "tags" | "components" | "links";
 
 // by-path endpoint
 export type FeedByPathQueryParams = {
   path: string;
   subjectType: FeedSubjectType;
   liveOnly?: boolean;
-  includes?: FeedInclude[];
+  includes?: FeedIncludes[];
 };
 export type FeedByPathResponseType = { feed: FeedType };
 
@@ -21,14 +26,15 @@ export type FeedCollectionSortType =
   | "-publishedAt"
   | "expiredAt"
   | "-expiredAt";
+
 export type FeedCollectionParams = {
   sort?: FeedCollectionSortType;
   searchPath?: string;
   subjectTypes?: FeedSubjectType[];
   ids?: number[];
   paths?: string[];
-  tags?: string[];
-  includes?: FeedInclude[];
+  tags?: TagNameType[];
+  includes?: FeedIncludes[];
   page?: number;
   pageSize?: number;
   liveOnly?: boolean;
